@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Spring, animated } from "react-spring/renderprops";
 import { interpolate } from "flubber";
+import { Svg, G, Path } from "react-primitives-svg";
+const AnimatedPath = animated(Path);
 function MultiPathInterpolator({
   svgProps,
   gProps,
   interpolateConfig,
   pathGroups,
-  springProps
+  springProps,
+  ...rest
 }) {
   const [interpolatorsArray] = useState(
     pathGroups.map(pathGroup =>
@@ -17,8 +20,8 @@ function MultiPathInterpolator({
   );
   const [index, updateIndex] = useState(0);
   return (
-    <svg {...svgProps}>
-      <g {...gProps}>
+    <Svg {...svgProps}>
+      <G {...gProps}>
         <Spring
           reset
           native
@@ -31,7 +34,7 @@ function MultiPathInterpolator({
           {({ t }) => (
             <React.Fragment>
               {interpolatorsArray.map(interpolators => (
-                <animated.path
+                <AnimatedPath
                   key={Math.random()}
                   d={t.interpolate(interpolators[index % interpolators.length])}
                 />
@@ -39,9 +42,8 @@ function MultiPathInterpolator({
             </React.Fragment>
           )}
         </Spring>
-      </g>
-    </svg>
+      </G>
+    </Svg>
   );
 }
-//<animated.path d={t.interpolate(interpolator)} />
 export default MultiPathInterpolator;

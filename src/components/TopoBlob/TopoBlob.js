@@ -24,7 +24,13 @@ import guard from "../../utils/guardNumberInRange";
 /*
   Makes sure number is in range
 */
+import { Svg, G, Path, Text } from "react-primitives-svg";
+/*
+  Make code platform agnostic
+*/
+import { Spring, animated } from "react-spring/renderprops";
 import _ from "lodash";
+const AnimatedPath = animated(Path);
 function TopoBlob({
   /*
     Most props can be functions to enable complex 
@@ -39,17 +45,18 @@ function TopoBlob({
   contrast = (percent, index, layers) => percent,
   complexity = (percent, index, layers) => percent,
   baseColor = (percent, index, layers) => "white",
-  xyCoords = (percent, index, layers, size) => ["50%", 200],
   seed = (p, i, l) => "random",
-  additionalStyles = (percent, index, layers, [x, y], size) => ({}),
-  style = (percent, index, layers, [x, y], size) => ({
-    position: "absolute",
-    top: `calc(${y} - ${size * 0.5}px)`,
-    left: `calc(${x} - ${size * 0.5}px)`
-  }),
-  layers = 10
+  layers = 10,
+  label = "",
+  labelFontSizePx = 12,
+  labelXOffset = 0,
+  labelYOffset = 0,
+  labelColor = "red",
+  scaleFactor = 1.3,
+  style,
+  ...rest
 }) {
-  let blobConfigs = [];
+  let blobElemets = [];
   let l = layers;
   for (let i = 0; i < layers; i++) {
     const p = guard(i / l);
@@ -84,40 +91,50 @@ function TopoBlob({
     /*
       eliminate 'stroke-width' prop to avoid error from react
     */
-    blobConfigs.push(generatedProps);
+    blobElemets.push(generatedProps);
   }
-  blobConfigs = blobConfigs.reverse();
+  blobElemets = blobElemets.reverse();
   /*
-    Makes sure last blob is rendered first and first atop
+    Makes sure last (largest) blob is rendered first and 
+    that the first (smallest) goes atop
   */
+  const fullWidth = blobElemets[0].svg.width;
   return (
-    <React.Fragment>
-      {blobConfigs.map(({ svg, g, path }, index) => {
-        const pil = [guard(index / layers), index, layers];
-        const styleArgs = [
-          ...pil,
-          val(xyCoords, ...pil, svg.width).map(el =>
-            _.isNumber(el) ? el + "px" : el
-          ),
-          svg.width
-        ];
-        return (
-          <div
-            key={Math.random()}
-            style={{
-              ...val(style, ...styleArgs),
-              ...val(additionalStyles, ...styleArgs)
-            }}
-          >
-            <svg {...svg}>
-              <g {...g}>
-                <path {...path} />
-              </g>
-            </svg>
-          </div>
-        );
-      })}
-    </React.Fragment>
+    <Svg
+      viewBox={blobElemets[0].svg.viewBox}
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMidYMid meet"
+      style={{
+        display: "inline-block",
+        ...style
+      }}
+      {...rest}
+    >
+      <G transform={`scale(${scaleFactor}, ${scaleFactor})`}>
+        {blobElemets.map(({ svg, g, path }) => {
+          const offset = (fullWidth - svg.width * scaleFactor * 0.99) / 2;
+          return (
+            <Path
+              {...path}
+              {...g}
+              key={Math.random()}
+              style={{
+                transform: `translate(${offset}px, ${offset + 10}px)`
+              }}
+            />
+          );
+        })}
+        <Text
+          x={(fullWidth - label.length * labelFontSizePx) / 2}
+          y={(fullWidth - label.length) / 2}
+          dx={labelXOffset}
+          dy={labelYOffset}
+          style={{ zIndex: 1000, fill: labelColor, fontSize: labelFontSizePx }}
+        >
+          {label}
+        </Text>
+      </G>
+    </Svg>
   );
 }
 export default TopoBlob;

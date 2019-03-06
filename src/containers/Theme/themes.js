@@ -1,37 +1,20 @@
 import colors from "../../utils/ColorPallete";
 export const main = {
   breakpoints: [
-    0,
-    //mobile
     600,
     //tablet portrait
-    890,
+    800,
     //tablet landscape
     1020,
     //laptop
     1280,
     //desktop
-    1690
+    1690,
     //big desktop
+    1800
   ],
-  fontSizes: {
-    xxs: 8,
-    xs: 10,
-    sm: 12,
-    md: 16,
-    lg: 22,
-    xl: 32,
-    xxl: 48,
-    xxxl: 96
-  },
-  space: {
-    xxs: 4,
-    xs: 6,
-    sm: 12,
-    md: 16,
-    lg: 22,
-    xl: 32
-  },
+  fontSizes: [8, 10, 12, 16, 22, 32, 48, 96],
+  space: [8, 12, 24, 36, 58, 82, 126, 180, 230],
   fonts: {
     sans: "Josefin Sans",
     mono: "Menlo"

@@ -1,27 +1,31 @@
 import React from "react";
 import { Home } from "./views";
 import Theme from "./containers/Theme/Theme";
-import { Box } from "rebass";
+import { Box, Flex } from "rebass";
 import colors from "./utils/ColorPallete";
+import Navbar from "./components/Navbar/Navbar";
 const globalStyles = `
-  * { 
-    box-sizing: border-box; 
-  }
-  body { 
-    margin: 0; 
-    font-family: 'Josefin Sans', Times, Helvetica Neue;
-    background: ${colors.get("color", "darknight")};
-    color: ${colors.get("color", "gray")}
-  }
+* { 
+  box-sizing: border-box;
+}
+body { 
+  margin: 0; 
+  font-family: 'Josefin Sans', Times, Helvetica Neue;
+  background: ${colors.get("color", "darknight")};
+  color: ${colors.get("color", "gray")};
+}
 `;
 function App() {
   return (
     <React.Fragment>
       <Theme theme="main">
         <style>{globalStyles}</style>
-        <Box className="mecho">
+        <Flex flexWrap="wrap" justifyContent="start">
+          <Box width={[0.8, 0.4, 0.3]} style={{ placeSelf: "flex-start" }}>
+            <Navbar />
+          </Box>
           <Home />
-        </Box>
+        </Flex>
       </Theme>
     </React.Fragment>
   );
