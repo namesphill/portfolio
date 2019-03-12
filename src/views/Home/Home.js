@@ -1,11 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box } from "rebass";
+import { useSpring, animated } from "react-spring";
 import TopoBlob from "../../components/TopoBlob/TopoBlob";
 import colors from "../../utils/ColorPallete";
 function Home() {
+  const screen = {
+    width: "100vw",
+    height: "100vh"
+  };
+  const logo = {
+    width: "60vw",
+    height: "25vw"
+  };
+  const pink = colors.get("color", "pink");
+  const teal = colors.get("color", "teal");
+  const [toggle, updateToggle] = useState(false);
+  const initialProps = {
+    opacity: 1,
+    width: 100,
+    height: 100,
+    position: "absolute",
+    backgroundColor: pink,
+    top: 40,
+    left: 60
+  };
+  const conclusiveProps = {
+    opacity: 0.2,
+    backgroundColor: teal,
+    position: "absolute",
+    top: 0,
+    left: 0,
+    height: window.innerHeight,
+    width: window.innerWidth,
+    margin: "none none none none !important"
+  };
+  const [props, set, stop] = useSpring(() => initialProps);
+  set(!toggle ? initialProps : conclusiveProps);
+  stop();
+  // const props = useSpring({
+  //   to: async (next, cancel) => {
+  //     await next({ opacity: 1, color: "#ffaaee" });
+  //     await next({ opacity: 0, color: "rgb(14,26,19)" });
+  //   },
+  //   from: { opacity: 0, color: "red" }
+  // });
   return (
     <React.Fragment>
-      <Box width={[1, 0.65, 0.54, 0.45, 0.45]} mt={[-1, -2, -1, -1, -1, -6]}>
+      <animated.div style={props} onClick={() => updateToggle(!toggle)}>
+        I will fade in and out
+      </animated.div>
+      {/* <Box width={[0.9, 540]} height={[0.9, 540]} mb={-2} style={props}>
         <TopoBlob
           layers={8}
           label="Code"
@@ -17,43 +61,9 @@ function Home() {
           complexity={(p, i, l) => 0.8 * Math.sin(i) + 0.1}
           contrast={(p, i, l) => 0.8 * Math.cos(i) + 0.1}
           seed={(p, i, l) => Date.now() * 1000 * Math.random() * p * p * p}
+          onClick={() => alert("clicked")}
         />
-      </Box>
-      <Box width={[0, 0, 0, 0.48, 0.48]} />
-      <Box
-        width={[1, 0.63, 0.52, 0.43, 0.45]}
-        ml="auto"
-        mt={[-4, -7, -5, -230, -230, -480]}
-        mr={[0, -2, 0, -3]}
-      >
-        <TopoBlob
-          label="Write"
-          labelColor={colors.get("color", "blue")}
-          labelFontSizePx={60}
-          layers={5}
-          baseColor={colors.get("color", "darkblue")}
-          complexity={(p, i, l) => Math.log10(p) + 1 * l * i}
-          contrast={(p, i, l) => (i * i + 0.1) / (l * l + 2 * p)}
-          seed={p => p * Math.sinh(p * p + p)}
-        />
-      </Box>
-      <Box
-        width={[1, 0.75, 0.65, 0.52, 0.45]}
-        mt={[-4, -6, -230, -350, "-48vw", "-52vw"]}
-        ml={[0, 0, 2, 4]}
-        mr={[0, 0, 0]}
-      >
-        <TopoBlob
-          label="Am"
-          labelColor={colors.get("color", "teal")}
-          labelFontSizePx={60}
-          layers={8}
-          baseColor={colors.get("colorGroup", "teal").dark}
-          complexity={0.9}
-          contrast={0.9}
-          seed={p => p * p * p * 298}
-        />
-      </Box>
+      </Box> */}
     </React.Fragment>
   );
 }

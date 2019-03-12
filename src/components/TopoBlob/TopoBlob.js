@@ -111,7 +111,7 @@ function TopoBlob({
       {...rest}
     >
       <G transform={`scale(${scaleFactor}, ${scaleFactor})`}>
-        {blobElemets.map(({ svg, g, path }) => {
+        {blobElemets.map(({ svg, g, path }, i) => {
           const offset = (fullWidth - svg.width * scaleFactor * 0.99) / 2;
           return (
             <Path

@@ -21,7 +21,7 @@ function App() {
       <Theme theme="main">
         <style>{globalStyles}</style>
         <Flex flexWrap="wrap" justifyContent="start">
-          <Box width={[0.8, 0.4, 0.3]} style={{ placeSelf: "flex-start" }}>
+          <Box width={[0.6, 360]} style={{ placeSelf: "flex-start" }}>
             <Navbar />
           </Box>
           <Home />
