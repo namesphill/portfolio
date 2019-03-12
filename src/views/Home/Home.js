@@ -12,44 +12,13 @@ function Home() {
     width: "60vw",
     height: "25vw"
   };
-  const pink = colors.get("color", "pink");
-  const teal = colors.get("color", "teal");
-  const [toggle, updateToggle] = useState(false);
-  const initialProps = {
-    opacity: 1,
-    width: 100,
-    height: 100,
-    position: "absolute",
-    backgroundColor: pink,
-    top: 40,
-    left: 60
-  };
-  const conclusiveProps = {
-    opacity: 0.2,
-    backgroundColor: teal,
-    position: "absolute",
-    top: 0,
-    left: 0,
-    height: window.innerHeight,
-    width: window.innerWidth,
-    margin: "none none none none !important"
-  };
-  const [props, set, stop] = useSpring(() => initialProps);
-  set(!toggle ? initialProps : conclusiveProps);
-  stop();
-  // const props = useSpring({
-  //   to: async (next, cancel) => {
-  //     await next({ opacity: 1, color: "#ffaaee" });
-  //     await next({ opacity: 0, color: "rgb(14,26,19)" });
-  //   },
-  //   from: { opacity: 0, color: "red" }
-  // });
   return (
     <React.Fragment>
-      <animated.div style={props} onClick={() => updateToggle(!toggle)}>
-        I will fade in and out
-      </animated.div>
-      {/* <Box width={[0.9, 540]} height={[0.9, 540]} mb={-2} style={props}>
+      <animated.div
+        width={[0.9, 540]}
+        height={[0.9, 540]}
+        style={{ position: "absolute" }}
+      >
         <TopoBlob
           layers={8}
           label="Code"
@@ -63,7 +32,7 @@ function Home() {
           seed={(p, i, l) => Date.now() * 1000 * Math.random() * p * p * p}
           onClick={() => alert("clicked")}
         />
-      </Box> */}
+      </animated.div>
     </React.Fragment>
   );
 }
