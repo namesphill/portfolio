@@ -16,7 +16,8 @@ function BlobPositioner({ children, styles, layoutProps }) {
     top: 0,
     bottom: 0,
     left: 0,
-    right: 0
+    right: 0,
+    display: "block"
   };
   const normalStyles = {
     paddingTop: 0,
@@ -24,10 +25,10 @@ function BlobPositioner({ children, styles, layoutProps }) {
     paddingRight: 0,
     paddingBottom: 0,
     position: "absolute",
-    // transform: "unset",
     zIndex: 1,
     opacity: 1,
-    backgroundColor: "rgba(0,0,0,0)"
+    backgroundColor: "rgba(0,0,0,0)",
+    display: "block"
   };
   const [springs, updateSprings, stop] = useSprings(styles.length, i => ({
     ...(styles[i][breakpoint]
@@ -47,12 +48,10 @@ function BlobPositioner({ children, styles, layoutProps }) {
             zIndex: 100000,
             opacity: 0.999,
             backgroundColor: "rgba(0,0,0,0.8)"
-            // transform: "rotate(360deg)"
           }
         : {
             ...normalStyles,
             zIndex: -100
-            // transform: "unset"
           };
     return {
       ...(styles[i][breakpoint]
