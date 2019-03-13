@@ -129,7 +129,7 @@ function TopoBlob({
           y={(fullWidth - label.length) / 2}
           dx={labelXOffset}
           dy={labelYOffset}
-          style={{ zIndex: 1000, fill: labelColor, fontSize: labelFontSizePx }}
+          style={{ zIndex: 10, fill: labelColor, fontSize: labelFontSizePx }}
         >
           {label}
         </Text>

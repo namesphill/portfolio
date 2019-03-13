@@ -10,7 +10,7 @@ const phillChars = Object.values(phill);
 const pathGroups = felipeChars.map((char, i) => [phillChars[i], char]);
 function Navbar() {
   return (
-    <React.Fragment>
+    <>
       <Link
         href="/contact"
         color={colors.get("color", "darkpink")}
@@ -36,13 +36,18 @@ function Navbar() {
           width: "100%",
           xmlns: "http://www.w3.org/2000/svg",
           viewBox: "0 0 2740.000000 1100.000000",
-          preserveAspectRatio: "xMidYMid meet"
+          preserveAspectRatio: "xMidYMid meet",
+          style: {
+            position: "fixed",
+            top: 0,
+            left: 0
+          }
         }}
         pathGroups={pathGroups}
         interpolateConfig={{ maxSegmentLength: 100 }}
         springProps={{ delay: 2500, config: config.slow }}
       />
-    </React.Fragment>
+    </>
   );
 }
 export default Navbar;

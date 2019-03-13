@@ -32,14 +32,14 @@ function MultiPathInterpolator({
           {...springProps}
         >
           {({ t }) => (
-            <React.Fragment>
+            <>
               {interpolatorsArray.map(interpolators => (
                 <AnimatedPath
                   key={Math.random()}
                   d={t.interpolate(interpolators[index % interpolators.length])}
                 />
               ))}
-            </React.Fragment>
+            </>
           )}
         </Spring>
       </G>

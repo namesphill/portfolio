@@ -6,7 +6,7 @@ export default ({ children, theme = "main" }) => {
     <ThemeProvider
       theme={typeof theme === "string" ? Themes[theme.toLowerCase()] : theme}
     >
-      {children.length ? <React.Fragment>{children}</React.Fragment> : children}
+      {children.length ? <>{children}</> : children}
     </ThemeProvider>
   );
 };
