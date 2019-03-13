@@ -38,9 +38,9 @@ function Navbar() {
           viewBox: "0 0 2740.000000 1100.000000",
           preserveAspectRatio: "xMidYMid meet",
           style: {
-            position: "fixed",
-            top: 0,
-            left: 0
+            // position: "fixed",
+            // top: 0,
+            // left: 0
           }
         }}
         pathGroups={pathGroups}

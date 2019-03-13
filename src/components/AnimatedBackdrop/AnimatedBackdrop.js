@@ -1,32 +1,45 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
 function AnimatedBackdrop({ visible, children, ...rest }) {
-  const allScreenProps = {
-    postion: "fixed",
+  const overriddenStyles = visible
+    ? {
+        opacity: 0.9999,
+        zIndex: 10000000,
+        backgroundColor: "pink",
+        transform: "rotate(360deg)",
+        display: "initial"
+      }
+    : {
+        opacity: 0,
+        zIndex: -1000,
+        backgroundColor: "pink",
+        transform: "none",
+        display: "none"
+      };
+  console.log(overriddenStyles);
+  const allScreenStyles = {
+    position: "fixed",
     width: "100%",
     height: "100vh",
     top: 0,
     bottom: 0,
     left: 0,
-    right: 0
+    right: 0,
+    backfaceVisibility: "hidden"
   };
   const [style, updateStyle, stop] = useSpring(() => ({
-    opacity: 0,
-    zIndex: -100,
-    backgroundColor: "pink",
-    ...allScreenProps
+    ...allScreenStyles,
+    ...overriddenStyles
   }));
-  updateStyle({
-    opacity: visible ? 1 : 0,
-    zIndex: visible ? 1000000 : -100,
-    backgroundColor: visible ? "blue" : "pink",
-    ...allScreenProps
-  });
-  stop();
+  // updateStyle({
+  //   ...allScreenStyles,
+  //   ...overriddenStyles
+  // });
+  // stop();
   return (
     <>
       <animated.div style={style} {...rest} />
-      <div style={{ ...allScreenProps, zIndex: 100000000 }} className="mecho">
+      <div style={{ ...allScreenStyles, zIndex: 100000000 }} className="mecho">
         {children}
       </div>
     </>

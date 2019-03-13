@@ -1,58 +1,75 @@
 import React, { useState } from "react";
 import { useSprings, animated } from "react-spring";
 import AnimatedBackdrop from "../AnimatedBackdrop/AnimatedBackdrop";
-const computeBreakpintsToRanges = breakpoints =>
-  [-1, ...breakpoints, 12000]
-    .map((el, i, arr) => (arr[i + 1] ? [el + 1, arr[i + 1]] : false))
-    .filter(el => Boolean(el));
-const getBreakpoint = (width, breakpoints) => {
-  let index;
-  computeBreakpintsToRanges(breakpoints).forEach(([start, end], i) => {
-    if (width <= end && width >= start) index = i;
-  });
-  return index;
-};
-function BlobPositioner({ children, breakpoints = [], styles = [[{}]] }) {
-  const [breakpoint, updateBreakpoint] = useState(
-    getBreakpoint(window.innerWidth, breakpoints)
-  );
+function BlobPositioner({ children, styles, layoutProps }) {
+  const { breakpoint, width, height } = layoutProps;
   const [openBlob, updateOpenBlob] = useState(-1);
-  window.onresize = function({ target: { innerWidth: width } }) {
-    const currentBreakpoint = getBreakpoint(width, breakpoints);
-    if (currentBreakpoint !== breakpoint) updateBreakpoint(currentBreakpoint);
+  console.log(breakpoint);
+  const centeredPaddings = blobWidth => ({
+    paddingLeft: (width - blobWidth) / 2,
+    paddingRight: (width - blobWidth) / 2,
+    paddingTop: (height - blobWidth) / 2,
+    paddingBottom: (height - blobWidth) / 2
+  });
+  const fullPosition = {
+    position: "fixed",
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0
+  };
+  const normalStyles = {
+    paddingTop: 0,
+    paddingLeft: 0,
+    paddingRight: 0,
+    paddingBottom: 0,
+    position: "absolute",
+    // transform: "unset",
+    zIndex: 1,
+    opacity: 1,
+    backgroundColor: "rgba(0,0,0,0)"
   };
   const [springs, updateSprings, stop] = useSprings(styles.length, i => ({
-    opacity: 1,
-    ...styles[i][breakpoint]
+    ...(styles[i][breakpoint]
+      ? styles[i][breakpoint]
+      : styles[i][styles[i].length - 1]),
+    ...normalStyles
   }));
   updateSprings(i => {
+    const blobWidth = width <= height ? width : height;
     const overriddenStyles =
       openBlob === i
         ? {
-            width: window.innerWidth,
-            top: 0,
-            left: 0,
-            zIndex: 100000000
+            ...fullPosition,
+            ...centeredPaddings(blobWidth),
+            width,
+            height,
+            zIndex: 100000,
+            opacity: 0.999,
+            backgroundColor: "rgba(0,0,0,0.8)"
+            // transform: "rotate(360deg)"
           }
         : {
-            opacity: 1,
-            zIndex: 0
+            ...normalStyles,
+            zIndex: -100
+            // transform: "unset"
           };
-    return { ...styles[i][breakpoint], ...overriddenStyles };
+    return {
+      ...(styles[i][breakpoint]
+        ? styles[i][breakpoint]
+        : styles[i][styles[i].length - 1]),
+      ...overriddenStyles
+    };
   });
   stop();
 
   return (
     <>
-      <AnimatedBackdrop
-        visible={openBlob !== -1}
-        onClick={() => updateOpenBlob(-1)}
-      />
       {children.map((el, i) => (
         <animated.div
           key={Math.random()}
           style={springs[i]}
-          onClick={() => updateOpenBlob(i)}
+          onClick={() => updateOpenBlob(i === openBlob ? -1 : i)}
         >
           {el}
         </animated.div>

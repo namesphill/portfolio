@@ -1,7 +1,12 @@
 import colors from "../../utils/ColorPallete";
 export const main = {
   breakpoints: [
+    //mobile
     600,
+    //phablet
+    740,
+    //phablet
+    900,
     //tablet portrait
     800,
     //tablet landscape

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Home } from "./views";
-import Theme from "./containers/Theme/Theme";
+import Theme, { Themes } from "./containers/Theme/Theme";
 import { Box, Flex } from "rebass";
 import colors from "./utils/ColorPallete";
 import Navbar from "./components/Navbar/Navbar";
@@ -22,7 +22,23 @@ const debugStyle = `*:not(path):not(g) {
   outline:    solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
   box-shadow: none !important;
 }`;
+const computeBreakpintsToRanges = breakpoints =>
+  [-1, ...breakpoints, 12000]
+    .map((el, i, arr) => (arr[i + 1] ? [el + 1, arr[i + 1]] : false))
+    .filter(el => Boolean(el));
+const getBreakpoint = (width, breakpoints) => {
+  let index;
+  computeBreakpintsToRanges(breakpoints).forEach(([start, end], i) => {
+    if (width <= end && width >= start) index = i;
+  });
+  return index;
+};
 function App() {
+  const [width, updateWidth] = useState(window.innerWidth);
+  window.onresize = function({ target: { innerWidth: width } }) {
+    if (width % 10 === 0) updateWidth(width);
+  };
+  const breakpoint = getBreakpoint(width, Themes.main.breakpoints);
   return (
     <>
       <style>{globalStyles}</style>
@@ -39,7 +55,13 @@ function App() {
           <Box width={[0.6, 360]}>
             <Navbar />
           </Box>
-          <Home />
+          <Home
+            layoutProps={{
+              breakpoint: breakpoint,
+              width: width,
+              height: window.innerHeight
+            }}
+          />
         </div>
       </Theme>
     </>

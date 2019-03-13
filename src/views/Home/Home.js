@@ -2,90 +2,118 @@ import React from "react";
 import TopoBlob from "../../components/TopoBlob/TopoBlob";
 import BlobPositioner from "../../components/BlobPositioner/BlobPositioner";
 import colors from "../../utils/ColorPallete";
-function Home() {
+function Home({ layoutProps }) {
+  const { width, height, breakpoint } = layoutProps;
   const styles = [
     [
+      /*
+       *
+       * PURPLE!!!!!!
+       *
+       */
       {
         position: "absolute",
-        width: window.innerWidth * 0.9,
-        top: window.innerWidth * 0.2,
-        left: window.innerWidth * 0.05
+        width: width * 0.9,
+        top: width * 0.2,
+        left: width - 540,
+        right: 0
       },
       {
         position: "absolute",
         width: 540,
         top: 120,
-        left: window.innerWidth - 540
+        left: width - 540,
+        right: 0
       },
       {
         position: "absolute",
         width: 540,
         top: 0,
-        left: 200
+        left: 200,
+        right: width - 540
       },
       {
         position: "absolute",
         width: 540,
         top: -20,
-        left: 330
+        left: width - 540,
+        rigth: 20
       }
     ],
     [
+      /*
+       *
+       * BLUE!!!!!!
+       *
+       */
       {
         position: "absolute",
-        width: window.innerWidth * 0.9,
-        top: window.innerWidth,
-        left: window.innerWidth * 0.05
+        width: width * 0.9,
+        top: width,
+        left: width * 0.1,
+        right: 0
       },
       {
         position: "absolute",
         width: 540,
         top: 550,
-        left: 0
+        left: 0,
+        right: width - 540
       },
       {
         position: "absolute",
         width: 540,
         top: 350,
-        left: 0
+        left: 0,
+        right: width - 540
       },
       {
         position: "absolute",
         width: 540,
         top: 300,
-        left: 0
+        left: 0,
+        right: width - 540
       }
     ],
     [
+      /*
+       *
+       * GREEN!!!!!!
+       *
+       */
       {
         position: "absolute",
-        width: window.innerWidth * 0.9,
-        top: window.innerWidth * 1.8,
-        left: window.innerWidth * 0.05
+        width: width * 0.9,
+        top: width * 1.8,
+        left: width * 0.1,
+        right: width * 0.5
       },
       {
         position: "absolute",
         width: 540,
         top: 940,
-        left: window.innerWidth - 540
+        left: width - 540,
+        right: 0
       },
       {
         position: "absolute",
         width: 540,
         top: 750,
-        left: 200
+        left: 200,
+        right: width - 540
       },
       {
         position: "absolute",
         width: 540,
         top: 500,
-        left: 400
+        left: 400,
+        right: width - 540
       }
     ]
   ];
   return (
     <>
-      <BlobPositioner breakpoints={[600, 740, 900]} styles={styles}>
+      <BlobPositioner layoutProps={layoutProps} styles={styles}>
         <TopoBlob
           layers={8}
           label="Code"

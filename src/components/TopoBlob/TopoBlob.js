@@ -105,7 +105,7 @@ function TopoBlob({
       xmlns="http://www.w3.org/2000/svg"
       preserveAspectRatio="xMidYMid meet"
       style={{
-        display: "inline-block",
+        // display: "inline-block",
         ...style
       }}
       {...rest}

@@ -10,3 +10,4 @@ export default ({ children, theme = "main" }) => {
     </ThemeProvider>
   );
 };
+export { Themes };
