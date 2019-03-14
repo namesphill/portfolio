@@ -4,11 +4,11 @@ export const main = {
     //mobile
     600,
     //phablet
-    740,
+    780,
     //phablet
     900,
     //tablet portrait
-    800,
+    860,
     //tablet landscape
     1020,
     //laptop

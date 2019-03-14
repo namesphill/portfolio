@@ -4,7 +4,7 @@ import AnimatedBackdrop from "../AnimatedBackdrop/AnimatedBackdrop";
 function BlobPositioner({ children, styles, layoutProps }) {
   const { breakpoint, width, height } = layoutProps;
   const [openBlob, updateOpenBlob] = useState(-1);
-  console.log(breakpoint);
+  console.log(breakpoint, width);
   const centeredPaddings = blobWidth => ({
     paddingLeft: (width - blobWidth) / 2,
     paddingRight: (width - blobWidth) / 2,
@@ -47,7 +47,7 @@ function BlobPositioner({ children, styles, layoutProps }) {
             height,
             zIndex: 100000,
             opacity: 0.999,
-            backgroundColor: "rgba(0,0,0,0.8)"
+            backgroundColor: "rgba(0,0,0,0.9)"
           }
         : {
             ...normalStyles,

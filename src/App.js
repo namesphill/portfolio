@@ -14,11 +14,13 @@ body {
   font-family: 'Josefin Sans', Times, Helvetica Neue;
   background: black;
   color: ${colors.get("color", "gray")};
+  overflow-x: hidden;
+  max-width: 100% !important;
 }
 `;
 const debugStyle = `*:not(path):not(g) {
-  color:                    hsla(210, 100%, 100%, 0.9) !important;
-  background:               hsla(210, 100%,  50%, 0.5) !important;
+  color:      hsla(210, 100%, 100%, 0.9) !important;
+  background: hsla(210, 100%,  50%, 0.5) !important;
   outline:    solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
   box-shadow: none !important;
 }`;
@@ -36,7 +38,7 @@ const getBreakpoint = (width, breakpoints) => {
 function App() {
   const [width, updateWidth] = useState(window.innerWidth);
   window.onresize = function({ target: { innerWidth: width } }) {
-    if (width % 10 === 0) updateWidth(width);
+    if (width % 5 === 0) updateWidth(width);
   };
   const breakpoint = getBreakpoint(width, Themes.main.breakpoints);
   return (

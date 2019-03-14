@@ -15,8 +15,8 @@ function Home({ layoutProps }) {
         position: "absolute",
         width: width * 0.9,
         top: width * 0.2,
-        left: width - 540,
-        right: 0
+        left: width * 0.05,
+        right: width * 0.05
       },
       {
         position: "absolute",
@@ -30,14 +30,14 @@ function Home({ layoutProps }) {
         width: 540,
         top: 0,
         left: 200,
-        right: width - 540
+        right: width - 740
       },
       {
         position: "absolute",
         width: 540,
         top: -20,
-        left: width - 540,
-        rigth: 20
+        left: 300,
+        rigth: width - 840
       }
     ],
     [
@@ -50,8 +50,8 @@ function Home({ layoutProps }) {
         position: "absolute",
         width: width * 0.9,
         top: width,
-        left: width * 0.1,
-        right: 0
+        left: width * 0.05,
+        right: width * 0.05
       },
       {
         position: "absolute",
@@ -85,8 +85,8 @@ function Home({ layoutProps }) {
         position: "absolute",
         width: width * 0.9,
         top: width * 1.8,
-        left: width * 0.1,
-        right: width * 0.5
+        left: width * 0.05,
+        right: width * 0.05
       },
       {
         position: "absolute",
@@ -106,8 +106,22 @@ function Home({ layoutProps }) {
         position: "absolute",
         width: 540,
         top: 500,
+        left: width - 540,
+        right: 0
+      },
+      {
+        position: "absolute",
+        width: 540,
+        top: 500,
+        left: width - 540,
+        right: 0
+      },
+      {
+        position: "absolute",
+        width: 540,
+        top: 500,
         left: 400,
-        right: width - 540
+        right: width - 140
       }
     ]
   ];
