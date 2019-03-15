@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { CodeBlob, WriteBlob, AmBlob } from "../components/Blobs/Blobs";
-import BlobWrapper from "../components/Blobs/BlobWrapper";
+import TransitionAnimator from "../components/TransitionAnimator/TransitionAnimator";
 import { open, hidden, code, write, am } from "../components/Blobs/Styles";
 function Home({ layoutProps }) {
-  const { width } = layoutProps;
+  const { width, height } = layoutProps;
   const [blobStates, updateBlobStates] = useState({
     code: "closed",
     am: "closed",
@@ -18,7 +18,7 @@ function Home({ layoutProps }) {
     allhidden[blob] = "open";
     updateBlobStates(allhidden);
   };
-  const closeBlob = blob => {
+  const closeBlobs = () => {
     updateBlobStates({
       code: "closed",
       am: "closed",
@@ -27,47 +27,45 @@ function Home({ layoutProps }) {
   };
   return (
     <>
-      <BlobWrapper
+      <TransitionAnimator
         state={blobStates["code"]}
         onClick={() =>
-          blobStates["code"] === "open" ? closeBlob("code") : openBlob("code")
+          blobStates["code"] === "open" ? closeBlobs() : openBlob("code")
         }
         defaultState="closed"
         breakpoint={layoutProps.breakpoint}
-        Blob={CodeBlob}
+        component={CodeBlob}
         styles={{
           closed: code(width),
-          open: open(width),
+          open: open(width, height),
           hidden: hidden(width)
         }}
       />
-      <BlobWrapper
+      <TransitionAnimator
         state={blobStates["write"]}
         onClick={() =>
-          blobStates["write"] === "open"
-            ? closeBlob("write")
-            : openBlob("write")
+          blobStates["write"] === "open" ? closeBlobs() : openBlob("write")
         }
         defaultState="closed"
         breakpoint={layoutProps.breakpoint}
-        Blob={WriteBlob}
+        component={WriteBlob}
         styles={{
           closed: write(width),
-          open: open(width),
+          open: open(width, height),
           hidden: hidden(width)
         }}
       />
-      <BlobWrapper
+      <TransitionAnimator
         state={blobStates["am"]}
         onClick={() =>
-          blobStates["am"] === "open" ? closeBlob("am") : openBlob("am")
+          blobStates["am"] === "open" ? closeBlobs() : openBlob("am")
         }
         defaultState="closed"
         breakpoint={layoutProps.breakpoint}
-        Blob={AmBlob}
+        component={AmBlob}
         styles={{
           closed: am(width),
-          open: open(width),
+          open: open(width, height),
           hidden: hidden(width)
         }}
       />

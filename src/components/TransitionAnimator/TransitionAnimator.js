@@ -1,9 +1,13 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
+/// Recieves an object with responsive styles
+/// where each key stands for an state of the component
+/// upon state change the component will animate its transition
+/// taken that theres a default state that is predicatble
 function BlobWrapper({
   state,
   styles,
-  Blob,
+  component: Component,
   onClick,
   defaultState,
   breakpoint
@@ -24,7 +28,7 @@ function BlobWrapper({
   return (
     <>
       <animated.div style={spring} onClick={onClick}>
-        <Blob />
+        <Component />
       </animated.div>
     </>
   );

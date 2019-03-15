@@ -1,12 +1,19 @@
-export const open = width => [
-  {
-    top: width * 0.2
-  }
-];
+export const open = (width, height) => {
+  const blobWidth = height >= width ? width : height;
+  return [
+    {
+      width: blobWidth,
+      top: (height - blobWidth) / 2,
+      left: (width - blobWidth) / 2,
+      right: (width - blobWidth) / 2
+    }
+  ];
+};
 
 export const hidden = width => [
   {
-    left: width * -1.5
+    left: width * -1.5,
+    top: 0
   }
 ];
 
