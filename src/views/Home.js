@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import AmBlob from "../components/Blobs/AmBlob";
-import CodeBlob from "../components/Blobs/CodeBlob";
-import WriteBlob from "../components/Blobs/WriteBlob";
+import { CodeBlob, WriteBlob, AmBlob } from "../components/Blobs/Blobs";
 import BlobWrapper from "../components/Blobs/BlobWrapper";
 import {
   open,
