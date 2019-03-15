@@ -28,9 +28,7 @@ import { Svg, G, Path, Text } from "react-primitives-svg";
 /*
   Make code platform agnostic
 */
-import { Spring, animated } from "react-spring/renderprops";
 import _ from "lodash";
-const AnimatedPath = animated(Path);
 function TopoBlob({
   /*
     Most props can be functions to enable complex 

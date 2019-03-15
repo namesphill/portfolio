@@ -3,7 +3,7 @@ import TopoBlob from "../../components/TopoBlob/TopoBlob";
 import BlobPositioner from "../../components/BlobPositioner/BlobPositioner";
 import colors from "../../utils/ColorPallete";
 function Home({ layoutProps }) {
-  const { width, height, breakpoint } = layoutProps;
+  const { width } = layoutProps;
   const styles = [
     [
       /*

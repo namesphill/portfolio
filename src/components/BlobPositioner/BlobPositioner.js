@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useSprings, animated } from "react-spring";
-import AnimatedBackdrop from "../AnimatedBackdrop/AnimatedBackdrop";
 function BlobPositioner({ children, styles, layoutProps }) {
   const { breakpoint, width, height } = layoutProps;
   const [openBlob, updateOpenBlob] = useState(-1);
@@ -46,11 +45,11 @@ function BlobPositioner({ children, styles, layoutProps }) {
             width,
             height,
             zIndex: 100000,
-            opacity: 0.999,
-            backgroundColor: "rgba(0,0,0,0.9)"
+            opacity: 0.999
           }
         : {
             ...normalStyles,
+            ...(openBlob !== -1 ? { left: blobWidth * -1.5 } : {}),
             zIndex: -100
           };
     return {

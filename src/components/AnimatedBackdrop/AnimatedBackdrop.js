@@ -27,15 +27,10 @@ function AnimatedBackdrop({ visible, children, ...rest }) {
     right: 0,
     backfaceVisibility: "hidden"
   };
-  const [style, updateStyle, stop] = useSpring(() => ({
+  const [style] = useSpring(() => ({
     ...allScreenStyles,
     ...overriddenStyles
   }));
-  // updateStyle({
-  //   ...allScreenStyles,
-  //   ...overriddenStyles
-  // });
-  // stop();
   return (
     <>
       <animated.div style={style} {...rest} />

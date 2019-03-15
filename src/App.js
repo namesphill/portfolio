@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Home } from "./views";
 import Theme, { Themes } from "./containers/Theme/Theme";
-import { Box, Flex } from "rebass";
+import { Box } from "rebass";
 import colors from "./utils/ColorPallete";
 import Navbar from "./components/Navbar/Navbar";
-import AnimatedBackdrop from "./components/AnimatedBackdrop/AnimatedBackdrop";
 const globalStyles = `
 * { 
   box-sizing: border-box;
@@ -18,12 +17,12 @@ body {
   max-width: 100% !important;
 }
 `;
-const debugStyle = `*:not(path):not(g) {
-  color:      hsla(210, 100%, 100%, 0.9) !important;
-  background: hsla(210, 100%,  50%, 0.5) !important;
-  outline:    solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
-  box-shadow: none !important;
-}`;
+// const debugStyle = `*:not(path):not(g) {
+//   color:      hsla(210, 100%, 100%, 0.9) !important;
+//   background: hsla(210, 100%,  50%, 0.5) !important;
+//   outline:    solid 0.25rem hsla(210, 100%, 100%, 0.5) !important;
+//   box-shadow: none !important;
+// }`;
 const computeBreakpintsToRanges = breakpoints =>
   [-1, ...breakpoints, 12000]
     .map((el, i, arr) => (arr[i + 1] ? [el + 1, arr[i + 1]] : false))
