@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import AmBlob from "./Blobs/AmBlob";
-import CodeBlob from "./Blobs/CodeBlob";
-import WriteBlob from "./Blobs/WriteBlob";
-import BlobWrapper from "./Blobs/BlobWrapper";
-import { open, hidden, code, write, am } from "./Blobs/GeneralStyles";
+import AmBlob from "../components/Blobs/AmBlob";
+import CodeBlob from "../components/Blobs/CodeBlob";
+import WriteBlob from "../components/Blobs/WriteBlob";
+import BlobWrapper from "../components/Blobs/BlobWrapper";
+import {
+  open,
+  hidden,
+  code,
+  write,
+  am
+} from "../components/Blobs/GeneralStyles";
 function Home({ layoutProps }) {
   const { width } = layoutProps;
   const [blobStates, updateBlobStates] = useState({
