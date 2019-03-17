@@ -66,6 +66,7 @@ const colorPallete = new ColorPallete({
   darkteal: "#05c46b",
   night: "#485460",
   darknight: "#1e272e",
-  lightgray: "#fcfcfc"
+  lightgray: "#fcfcfc",
+  black: "#000"
 });
 export default colorPallete;

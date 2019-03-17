@@ -6,6 +6,7 @@ const AnimatedPath = animated(Path);
 function MultiPathInterpolator({
   svgProps,
   gProps,
+  pathPropsArray,
   interpolateConfig,
   pathGroups,
   springProps,
@@ -31,19 +32,17 @@ function MultiPathInterpolator({
           onRest={() => updateIndex(index + 1)}
           {...springProps}
         >
-          {({ t }) => (
-            <>
-              {interpolatorsArray.map(interpolators => (
-                <AnimatedPath
-                  key={Math.random()}
-                  d={t.interpolate(interpolators[index % interpolators.length])}
-                />
-              ))}
-            </>
-          )}
+          {({ t }) =>
+            interpolatorsArray.map(interpolators => (
+              <AnimatedPath
+                key={Math.random()}
+                d={t.interpolate(interpolators[index % interpolators.length])}
+              />
+            ))
+          }
         </Spring>
       </G>
     </Svg>
   );
 }
-export default MultiPathInterpolator;
+export default React.memo(MultiPathInterpolator);

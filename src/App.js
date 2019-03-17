@@ -11,7 +11,7 @@ const globalStyles = `
 body { 
   margin: 0; 
   font-family: 'Josefin Sans', Times, Helvetica Neue;
-  background: black;
+  background: ${colors.get("color", "black")};
   color: ${colors.get("color", "gray")};
   overflow-x: hidden;
   max-width: 100% !important;

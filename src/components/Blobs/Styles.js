@@ -3,9 +3,9 @@ export const open = (width, height) => {
   return [
     {
       width: blobWidth,
-      top: (height - blobWidth) / 2,
-      left: (width - blobWidth) / 2,
-      right: (width - blobWidth) / 2
+      top: (height - blobWidth) / 1.55,
+      left: (width - blobWidth) / 3,
+      right: (width - blobWidth) / 1.5
     }
   ];
 };

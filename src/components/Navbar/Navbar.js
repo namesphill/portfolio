@@ -36,12 +36,7 @@ function Navbar() {
           width: "100%",
           xmlns: "http://www.w3.org/2000/svg",
           viewBox: "0 0 2740.000000 1100.000000",
-          preserveAspectRatio: "xMidYMid meet",
-          style: {
-            // position: "fixed",
-            // top: 0,
-            // left: 0
-          }
+          preserveAspectRatio: "xMidYMid meet"
         }}
         pathGroups={pathGroups}
         interpolateConfig={{ maxSegmentLength: 100 }}

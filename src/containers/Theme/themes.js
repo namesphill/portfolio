@@ -26,14 +26,73 @@ export const main = {
   },
   colors: colors.get("colorDictionary"),
   buttons: {
-    primary: {
+    primaryLeft: {
       color: colors.get("color", "gray"),
-      backgroundColor: colors.get("color", "darknight")
+      backgroundColor: colors.get("color", "black"),
+      border: "1px solid",
+      borderColor: colors.get("color", "gray"),
+      transition: "padding color 0.15s",
+      "&:active": {
+        backgroundColor: colors.get("color", "gray"),
+        color: colors.get("color", "black"),
+        cursor: "pointer"
+      },
+      "&:hover": {
+        paddingRight: 58,
+        paddingLeft: 14,
+        borderColor: colors.get("color", "darkgray")
+      }
     },
-    outline: {
-      color: colors.get("color", "lightred"),
-      backgroundColor: "transparent",
-      boxShadow: "inset 0 0 2px"
+    primaryRight: {
+      color: colors.get("color", "gray"),
+      backgroundColor: colors.get("color", "black"),
+      border: "1px solid",
+      borderColor: colors.get("color", "gray"),
+      transition: "padding 0.3s, transform 0.15s",
+      backgroundColor: colors.get("color", "gray"),
+      color: colors.get("color", "black"),
+      cursor: "pointer",
+      "&:active": {
+        transform: "scale(1.05)"
+      },
+      "&:hover": {
+        paddingLeft: 58,
+        paddingRight: 14,
+        color: colors.get("color", "darkteal")
+      }
+    },
+    outlineLeft: {
+      paddingTop: 5,
+      paddingBottom: 5,
+      color: colors.get("color", "gray"),
+      backgroundColor: colors.get("color", "black"),
+      border: "1px solid",
+      borderColor: colors.get("color", "gray"),
+      transition: "padding 0.3s, transform 0.15s",
+      cursor: "pointer",
+      "&:active": {
+        transform: "scale(1.05)"
+      },
+      "&:hover": {
+        paddingRight: 58,
+        paddingLeft: 14,
+        borderColor: colors.get("color", "darkpink"),
+        color: colors.get("color", "darkpink")
+      }
+    },
+    outlineRight: {
+      paddingTop: 5,
+      paddingBottom: 5,
+      color: colors.get("color", "gray"),
+      backgroundColor: colors.get("color", "black"),
+      border: "1px solid",
+      borderColor: colors.get("color", "gray"),
+      transition: "padding color 0.15s",
+      cursor: "pointer",
+      "&:active": {
+        paddingLeft: 58,
+        paddingRight: 14
+      }
     }
   }
 };

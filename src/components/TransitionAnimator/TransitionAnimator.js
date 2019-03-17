@@ -1,16 +1,17 @@
 import React from "react";
-import { useSpring, animated } from "react-spring";
+import { useSpring, animated, config } from "react-spring";
 /// Recieves an object with responsive styles
 /// where each key stands for an state of the component
 /// upon state change the component will animate its transition
 /// taken that theres a default state that is predicatble
-function BlobWrapper({
+function TransitionAnimator({
   state,
   styles,
-  component: Component,
+  component,
   onClick,
   defaultState,
-  breakpoint
+  breakpoint,
+  springConfig = "slow"
 }) {
   console.log({ state, styles, Blob, onClick, defaultState, breakpoint });
   const stylesAtDefaultState = styles[defaultState][breakpoint]
@@ -19,18 +20,18 @@ function BlobWrapper({
   const stylesAtState = styles[state][breakpoint]
     ? styles[state][breakpoint]
     : styles[state][styles[state].length - 1];
-  const [spring, updateSpring, stop] = useSpring(() => stylesAtDefaultState);
-  updateSpring({
-    ...stylesAtDefaultState,
-    ...stylesAtState
+  const spring = useSpring({
+    to: stylesAtState,
+    from: stylesAtDefaultState,
+    native: true,
+    config: config[springConfig]
   });
-  stop();
   return (
     <>
       <animated.div style={spring} onClick={onClick}>
-        <Component />
+        {component}
       </animated.div>
     </>
   );
 }
-export default BlobWrapper;
+export default React.memo(TransitionAnimator);
