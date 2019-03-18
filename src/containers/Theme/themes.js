@@ -26,26 +26,23 @@ export const main = {
   },
   colors: colors.get("colorDictionary"),
   buttons: {
-    primaryLeft: {
-      color: colors.get("color", "gray"),
-      backgroundColor: colors.get("color", "black"),
+    primaryBackwards: {
       border: "1px solid",
       borderColor: colors.get("color", "gray"),
-      transition: "padding color 0.15s",
+      transition: "padding 0.3s, transform 0.15s",
+      backgroundColor: colors.get("color", "gray"),
+      color: colors.get("color", "black"),
+      cursor: "pointer",
       "&:active": {
-        backgroundColor: colors.get("color", "gray"),
-        color: colors.get("color", "black"),
-        cursor: "pointer"
+        transform: "scale(1.05)"
       },
       "&:hover": {
         paddingRight: 58,
         paddingLeft: 14,
-        borderColor: colors.get("color", "darkgray")
+        color: colors.get("color", "darkteal")
       }
     },
-    primaryRight: {
-      color: colors.get("color", "gray"),
-      backgroundColor: colors.get("color", "black"),
+    primaryForward: {
       border: "1px solid",
       borderColor: colors.get("color", "gray"),
       transition: "padding 0.3s, transform 0.15s",
@@ -61,7 +58,7 @@ export const main = {
         color: colors.get("color", "darkteal")
       }
     },
-    outlineLeft: {
+    outlineBackwards: {
       paddingTop: 5,
       paddingBottom: 5,
       color: colors.get("color", "gray"),
@@ -80,18 +77,23 @@ export const main = {
         color: colors.get("color", "darkpink")
       }
     },
-    outlineRight: {
+    outlineForwards: {
       paddingTop: 5,
       paddingBottom: 5,
       color: colors.get("color", "gray"),
       backgroundColor: colors.get("color", "black"),
       border: "1px solid",
       borderColor: colors.get("color", "gray"),
-      transition: "padding color 0.15s",
+      transition: "padding 0.3s, transform 0.15s",
       cursor: "pointer",
       "&:active": {
+        transform: "scale(1.05)"
+      },
+      "&:hover": {
         paddingLeft: 58,
-        paddingRight: 14
+        paddingRight: 14,
+        borderColor: colors.get("color", "darkpink"),
+        color: colors.get("color", "darkpink")
       }
     }
   }

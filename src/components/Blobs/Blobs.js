@@ -7,7 +7,6 @@ function codeBlob() {
       labelProps={{
         text: "Code",
         color: colors.get("color", "purple"),
-        xOffset: -80,
         xOffset: -60,
         fontSizePx: 60
       }}

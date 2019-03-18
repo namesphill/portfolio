@@ -1,3 +1,11 @@
-body { 
-    display: inline-block;
-}
+* { 
+    box-sizing: border-box;
+  }
+  body { 
+    margin: 0; 
+    font-family: 'Josefin Sans', Times, Helvetica Neue;
+    background: #000;
+    color: #d2dae2;
+    overflow-x: hidden;
+    max-width: 100% !important;
+  }

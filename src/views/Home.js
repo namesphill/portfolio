@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Button } from "rebass";
+import { Button, Text } from "rebass";
 import { CodeBlob, WriteBlob, AmBlob } from "../components/Blobs/Blobs";
 import TransitionAnimator from "../components/TransitionAnimator/TransitionAnimator";
 import DescriptionView from "../components/DescriptionView/DescriptionView";
-import descriptions from "../components/Blobs/descriptions";
 import { open, hidden, code, write, am } from "../components/Blobs/styles";
+import data from "../DB/db.json";
+const { descriptions } = data;
 const blobComponents = {
   code: <CodeBlob />,
   write: <WriteBlob />,
@@ -15,7 +16,7 @@ const blobStyles = {
   write,
   am
 };
-function Home({ layoutProps }) {
+function Home({ layoutProps = { breakpoint: 6, width: 1680, height: 987 } }) {
   const { width, height } = layoutProps;
   const [blobStates, updateBlobStates] = useState({
     code: "closed",
@@ -45,8 +46,8 @@ function Home({ layoutProps }) {
     : "none";
   return (
     <>
-      {["code", "write", "am"].map(blob => (
-        <>
+      {["code", "write", "am"].map((blob, i) => (
+        <React.Fragment key={i}>
           <TransitionAnimator
             state={currentlyOpenBlob !== blob ? "invisible" : "visible"}
             defaultState="invisible"
@@ -54,7 +55,9 @@ function Home({ layoutProps }) {
             component={
               <DescriptionView
                 openBlob={currentlyOpenBlob}
-                text={descriptions[blob]}
+                text={descriptions[blob].map(el => (
+                  <Text key={Math.random()}>{el}</Text>
+                ))}
                 layoutProps={layoutProps}
                 onGoBack={closeBlobs}
               />
@@ -78,14 +81,14 @@ function Home({ layoutProps }) {
               hidden: hidden(width)
             }}
           />
-        </>
+        </React.Fragment>
       ))}
       <TransitionAnimator
         state={currentlyOpenBlob === "none" ? "invisible" : "visible"}
         defaultState="invisible"
         breakpoint={layoutProps.breakpoint}
         component={
-          <Button variant="outlineLeft" onClick={closeBlobs}>
+          <Button variant="outlineBackwards" onClick={closeBlobs}>
             &#8592;
           </Button>
         }
@@ -97,4 +100,4 @@ function Home({ layoutProps }) {
     </>
   );
 }
-export default Home;
+export default React.memo(Home);

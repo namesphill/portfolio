@@ -1,9 +1,10 @@
 import React from "react";
 import { Button, Text } from "rebass";
 import { text as textStyles, button as buttonStyles } from "./styles";
+import { Link } from "react-router-dom";
 const resolveStyle = (st, b, w, h) =>
   st(w, h)[b] ? st(w, h)[b] : st(w, h)[st(w, h).length - 1];
-function description({ layoutProps, openBlob, text }) {
+function DescriptionView({ layoutProps, openBlob, text }) {
   const { breakpoint, width, height } = layoutProps;
   const textStyle = resolveStyle(textStyles, breakpoint, width, height);
   const buttonStyle = resolveStyle(buttonStyles, breakpoint, width, height);
@@ -19,14 +20,12 @@ function description({ layoutProps, openBlob, text }) {
       <Text lineHeight={1.5} style={{ ...extraTextStyles, ...textStyle }}>
         {text}
       </Text>
-      <Button
-        style={{ ...buttonStyle }}
-        variant="primaryRight"
-        onClick={() => window.location.replace("and-i/" + openBlob)}
-      >
-        Learn More +
-      </Button>
+      <Link to={"and-i/" + openBlob}>
+        <Button style={{ ...buttonStyle }} variant="primaryForward">
+          Learn More +
+        </Button>
+      </Link>
     </>
   );
 }
-export default React.memo(description);
+export default React.memo(DescriptionView);
