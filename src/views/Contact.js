@@ -4,7 +4,7 @@ import { Text, Box } from "rebass";
 const {
   contact: { contactInfo, description }
 } = data;
-function Contact({ layoutProps }) {
+function Contact() {
   return (
     <Box ml={40} mt={40} width={[1, 0.9, 0.7, 0.8, 688]} mb={200}>
       {description.map(el => (
@@ -21,4 +21,4 @@ function Contact({ layoutProps }) {
     </Box>
   );
 }
-export default Contact;
+export default React.memo(Contact);
