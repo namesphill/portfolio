@@ -1,32 +1,56 @@
 {
     "descriptions":{
         "code": [
-            "I started coding when i was 14 years old and i vivdly remember the excitement that accompanied me when i first opened the Swift Playgrounds app on my iPad and felt a huge world unfold as i discovered what it meant to create things with code.",
-            "Since then my love for the very nerdy concepts of Computer Science and the ability to create things in the world of bits that make people feel and live better in the world of atoms is a promise that lives as one of the most idealistic and utterly beautiful of our era."
+            "I started coding when i was 14 years old and i vivdly remember the excitement that accompanied me when i first opened the Swift Playgrounds app on my iPad and felt a huge world unfold.",
+            "Since then my love for the very nerdy concepts of Computer Science and the ability to create things in the world of bits that make people feel and live better in the world of atoms feels as one of the most idealistic and utterly beautiful promises of our era."
         ],
         "am": [
-            "I am a human person and i am 17 years old. I am a pretty nerdy high school teenager from northern Mexico (Dog city, to be precise) and have strong interests in computer science, physics, and philosophy. From this it might be inferred i love intelectual travel so i dare include that i also love physical travel and bodily locomotion (running). I was born February the 19th 2002. ",
-            "When it comes to human languages, i am fluent in English and Spanish, some German, bit of french, and i am a beginner in Chinese. When it comes to computer languages, i am fluent in JS, pretty well on Python and Swift, and i am a beginner in Dart."
+            "I am a human person and i am 17 years old. I am a pretty nerdy high school teenager from northern Mexico (Dog city, to be precise) and have strong interests in computer science, physics, and philosophy. From this it might be inferred i love intelectual travel so i dare include that i also love physical travel and bodily locomotion (running). I was born February the 19th 2002."
         ],
         "write": [
-            "For me writing has always been of really crucial service as a means of introspection, annalysis, and idea generation as well as divulgation. Writing is a resource that seldom fails to bring clarity into my world, and in doing so i find it innexorable to me being me. In that way i think it has a very transversal role in my life for it manifests itself in all my dwellings; clarity is never in excess. So although coding is in a way also writing and i think my delight in both is no coincidence, i think the sunset of my life might come the day i choose it is not worth it to keep moving the pen."
-        ],
-        "none": [""]
+            "For me writing has always been of really crucial service as a means of introspection, annalysis, and idea generation as well as divulgation. Writing is a resource that seldom fails to bring clarity into my world, and in doing so i find it innexorable to me being me. In that way i think it has a very transversal role in my life for it manifests itself in all my dwellings; clarity is never in excess."
+        ]
     },
     "contact": {
         "description": ["You may contact me for whatever reason. Don't hesitate, i dont bite!"],
         "contactInfo":[
             ["Mail", "acosta_jf@icloud.com"],
+            ["Mail 2", "jesusfacosta02@gmail.com"],
             ["Github", "FelipeAcosta02"]
         ]
     },
     "code": [
-        "I started coding when i was"
+        "I think very few things are more beautiful than code.",
+        "Coding provides a way to create things that can impact billions of people and have influence in more ways than can be thought yet it is a universe that we built completely from and for our selves and our knowledge.",
+        "Symbolic computation is like math in that it is a rigurous framework to work with and upon which create and explain things but it is very hard to speak about its origin for it cannot *REALLY* be known wether it was invented or discovered, and in such a way it proves so fundamental that the case might be made that it doesn't even make sense to talk about its origin.",
+        "But it is different in that math still feels grounded to the universe itself. The universe is such and numbers are thanks to that configuration yet coding has a father that is not nearly as 'natural' as the universe itself: us.",
+        "I have built a few things with code and you can find about them in my github, perhaps later at exactly this address a more beautiful representation of these creatins of mine will exist, as of now, i will limit this page to this.",
+        "I learned to code when i was about 14. I was then a high school student and my gateway drug was Swift Playgrounds. At the moment i enjoyed the status -- and to some extent still do -- of Apple Fanboy and went always through all of Apple's conferences, and WWDC 2016 was no exception.",
+        "I eagerly waited for Swift Playground to be made available for the iPad and immediatly once it was i put my hands to business. By three weeks i had convinced a friend and had gone through most modules of the begginner series. It didn't took long for us to use playgrounds for all sorts of automating academic stuff.",
+        "Once in high school, i started coding more swift stuff using Xcode.",
+        "Aged 15, me and this friend had our Digital Expression final project be an app we had built ourselves using Xcode, my macbook, some 20 hours, and a ton of help from Stack Overflow.",
+        "Since then i have used plenty of JS in vanilla flavor as well as with npm and its multiple frameworks and libraries. React, React Native in surplus and some Angular would be the big ones. Mobx, Redux, Rebass, Styled-Comonents.",
+        "I have also used some PHP and C++",
+        "Recently i have used a considerable amount of Python for i have been pretty interested in ML; as well as Dart and Flutter for i have seemed interested in reactive alternatives to React Native and overall the React paradigm.",
+        "On the backend, I have used AWS and GCP, Graphql, SQL, and noSQL. I am currently interested in learning Kubernetes and Docker.",
+        "So yeah, my human brain really enjoys interacting with non-human brains sometimes with the intention of interacting in some way with other human brains."
     ],
     "write": [
-        "I started coding when i was"
+        "Me writing things about me writing things is beautifully circular.",
+        "Around the age of 13 i went through a period of depression and found a really good coping mechanism in writing whatever happened to be in my mind. I don't know how much it helped quantitively in me healing from that period, but i do know few things have been more positively consequential in shaping who i am.",
+        "So yeah, i write and have been for some years now, things that feel like open conversations i have with myself and now i expect to really do make them open to the world; the reason behind all this 'portfolio' of mine.",
+        "If you want to know what i write about, read all about it!"
     ],
     "am": [
-        "I started coding when i was"
+        "My full name is Jesús Felipe Acosta Poras. I find it sufficient and comfortable to be called Felipe or Phill. I am 17 years old.",
+        "I speak fluent English and Spanish, some German, and a tiny bit of both French and Chinese.",
+        "I was born from 8 months on February the 19th 2002 in Chihuahua, Chihuahua, Mexico, city in which i currently live as so does most of my family. The last kid of a 5 person family, where both of my sisters, Larissa and Alejandra are older by 12 and 10 years respectively. My mom was 39 years old when she had me and my was father 33.",
+        "Since i can remember i've been fond of things a bit too adulty for my age and i also learned to speak from a very early age. I belive this is due to the fact that i was born into a family so much older than me and where both my parents where in a point of their careers where they were busy often. I was the only demographic sneeze in a family that would've otherwise been fairly older, and in such an environment i grew and developed adapting to my circumstances.",
+        "I have always been nerdy and regarded as fairly smart eventhough today i try hard to avoid letting me be deluded by things people may think of me or may have thought of me into believing a picture of myself not grounded in evidence. I think this is the defining fight of this stage of my development: adolescence.",
+        "I enjoy philosophy, mathematics, computer science, and physics very much. I am also keen in psychology and the natural sciences apart from physics. I absolutely love having deep conversations, even if only with me although most of the times others are welcomed.",
+        "Dwelling a bit more on liking and the like, i really like The Beatles, Bob Dylan, Kara Swisher, Albert Camus, Jean-Paul Sartre, traveling and cooking.",
+        "I think it would be useful now to share here that i have a personality that is somewhat particular. From the years i have learned that a defining feature of my personality is axiomatic. Another is neurotic and self-demanding. I have thought long about why these are and where these came from but i am far from having this answers with any significant clarity (yet this doesn't mean searching and thinking about this answers is not interesting!)",
+        "I have learned from lots of experiences to feel good with what i am and what that means and life seems, as of now, uncannily hopeful.",
+        "-- 3:37 PM Monday March 18th, 2019 from a sofa in my house, being pleasingly touched by sunlight coming in through the window."
     ]
 }

@@ -17,11 +17,17 @@ function DescriptionView({ layoutProps, openBlob, text }) {
   };
   return (
     <>
-      <Text lineHeight={1.5} style={{ ...extraTextStyles, ...textStyle }}>
+      <Text
+        lineHeight={1.5}
+        style={{ ...extraTextStyles, ...textStyle, zIndex: 10000 }}
+      >
         {text}
       </Text>
       <Link to={"and-i/" + openBlob}>
-        <Button style={{ ...buttonStyle }} variant="primaryForward">
+        <Button
+          style={{ ...buttonStyle, zIndex: 10000 }}
+          variant="primaryForward"
+        >
           Learn More +
         </Button>
       </Link>
