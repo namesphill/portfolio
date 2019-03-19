@@ -63,8 +63,12 @@ function Home({ layoutProps = { breakpoint: 6, width: 1680, height: 987 } }) {
               />
             }
             styles={{
-              visible: [{ right: 0, position: "absolute", width, top: 0 }],
-              invisible: [{ right: -500, position: "absolute", width, top: 0 }]
+              visible: [
+                { right: 0, position: "absolute", width, top: 0, opacity: 1 }
+              ],
+              invisible: [
+                { right: -500, position: "absolute", width, top: 0, opacity: 0 }
+              ]
             }}
           />
           <TransitionAnimator

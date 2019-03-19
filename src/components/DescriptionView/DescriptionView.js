@@ -10,7 +10,6 @@ function DescriptionView({ layoutProps, openBlob, text }) {
   const buttonStyle = resolveStyle(buttonStyles, breakpoint, width, height);
   const extraTextStyles = {
     minHeight: 200,
-    overflowY: "scroll",
     padding: 12,
     boxShadow: "inset 0 0 180px 0 rgba(255,255,255,0.2)",
     borderRadius: 16
