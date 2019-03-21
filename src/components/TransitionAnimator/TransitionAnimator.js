@@ -13,7 +13,6 @@ function TransitionAnimator({
   breakpoint,
   springConfig = "slow"
 }) {
-  console.log({ state, styles, Blob, onClick, defaultState, breakpoint });
   const stylesAtDefaultState = styles[defaultState][breakpoint]
     ? styles[defaultState][breakpoint]
     : styles[defaultState][styles[defaultState].length - 1];

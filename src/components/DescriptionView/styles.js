@@ -2,7 +2,7 @@ export const text = (width, height) => [
   {
     position: "absolute",
     width: width * 0.75,
-    top: width * 0.25,
+    top: width * 0.55,
     right: width * 0.05
   },
   {

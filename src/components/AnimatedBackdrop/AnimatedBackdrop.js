@@ -16,7 +16,7 @@ function AnimatedBackdrop({ visible, children, ...rest }) {
         transform: "none",
         display: "none"
       };
-  console.log(overriddenStyles);
+
   const allScreenStyles = {
     position: "fixed",
     width: "100%",

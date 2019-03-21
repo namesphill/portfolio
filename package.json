@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aws-amplify": "^1.1.22",
+    "aws-amplify-react": "^2.3.2",
     "blobs": "^1.0.3",
     "flubber": "^0.4.2",
     "html-parse-stringify": "^1.0.3",

@@ -8,7 +8,7 @@
             "I am a human person and i am 17 years old. I am a pretty nerdy high school teenager from northern Mexico (Dog city, to be precise) and have strong interests in computer science, physics, and philosophy. From this it might be inferred i love intelectual travel so i dare include that i also love physical travel and bodily locomotion (running). I was born February the 19th 2002."
         ],
         "write": [
-            "For me writing has always been of really crucial service as a means of introspection, analysis, and idea generation as well as divulgation. Writing is a resource that seldom fails to bring clarity into my world, and in doing so i find it inexorable to me being me. In that way i think it has a very transversal role in my life for it manifests itself in all my dwellings; clarity is never in excess."
+            "For me writing has been always crucial as a means of introspection, analysis, and idea generation as well as divulgation. Writing is a resource that seldom fails to bring clarity into my world, and in doing so i find it inexorable to me being me. In that way i think it has a very transversal role in my life for it manifests itself in all my dwellings; clarity is never in excess."
         ]
     },
     "contact": {
@@ -16,8 +16,8 @@
         "contactInfo":[
             ["Mail", "acosta_jf@icloud.com"],
             ["Mail 2", "jesusfacosta02@gmail.com"],
-            ["Twitter", "@JesusFAcostaP"],
-            ["Github", "FelipeAcosta02"]
+            ["Twitter", "@namesphill"],
+            ["Github", "namesphill"]
         ]
     },
     "code": [
@@ -25,7 +25,7 @@
         "Coding provides a way to create things that can impact billions of people and have influence in more ways than can be thought of, yet it is a universe that we built completely from and for ourselves and our knowledge.",
         "Symbolic computation is like math in that it is a rigurous framework to work with and upon which you can create things and explain phenomena. Also, it is very hard to speak about its origin for it cannot *really* be known whether it was invented or discovered, and in such a way it proves so fundamental that the case might be made that it doesn't even make sense to talk about its origin.",
         "But it is different in that math still feels grounded to the universe itself. The universe is such and numbers are thanks to that configuration yet coding has a father that is not nearly as 'natural' as the universe itself: us.",
-        "I have built a few things with code and you can find about them in my github (found on /contact), perhaps later at exactly this address a more beautiful representation of these creations of mine will exist; as of now, i will limit this page to this.",
+        "I have built a few things with code and you can find about all of them -- up to and including this very site -- in my github (found on /contact), perhaps later at exactly this address a more beautiful representation of these creations of mine will exist; as of now, i will limit this page to this.",
         "I learned to code when i was about 14. I was then a high school student and my gateway drug was Swift Playgrounds. At the moment i enjoyed the status -- and to some extent still do -- of Apple Fanboy and went always through all of Apple's conferences, and WWDC 2016 was no exception.",
         "I eagerly waited for Swift Playgrounds to be made available for the iPad and  once it was, i immediately put my hands to business. By three weeks i had convinced a friend to join my nerd quest and had gone through most modules of the begginner series. It didn't took long for us to use playgrounds for automating all sorts of academic chores.",
         "Once in high school, i started coding more swift stuff using Xcode.",

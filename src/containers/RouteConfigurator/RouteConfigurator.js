@@ -54,7 +54,7 @@ export default ({ name, view, childProps }) => {
     exact
   });
   const props = getPropsOnConfig(config);
-  console.log(props);
+  
   if (config.name === "NotFound")
     return <Route key="not-found" component={view} />;
   if (!config.privateRoute) return <Route {...props} />;

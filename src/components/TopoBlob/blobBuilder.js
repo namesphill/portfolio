@@ -44,7 +44,6 @@ function blobBuilder({
   layers = 10,
   style
 }) {
-  console.log(baseColor);
   let blobElemets = [];
   let l = layers;
   for (let i = 0; i < layers; i++) {
